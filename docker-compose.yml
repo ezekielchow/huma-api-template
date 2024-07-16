@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.dev
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    restart: always
+    volumes:
+      - ./api:/app
+    env_file: .env
